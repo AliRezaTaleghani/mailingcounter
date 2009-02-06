@@ -1,0 +1,24 @@
+<p>
+  <b>Department:</b>
+  <%=h @catalog.department_id %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%=h @catalog.group_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_catalog_path(@catalog) %> |
+<%= link_to 'Back', catalogs_path %>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+برای بازگشت به صفحه ی قبل از گزینه ی "Back" استفاده کنید.
+</p>
+<p>
+برای ویرایش جزئیات ارتباط های موجود از گزینه ی "Edit" استفاده کنید.
+</p>
+</div>

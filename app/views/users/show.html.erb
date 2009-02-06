@@ -1,0 +1,28 @@
+<p>
+	<b>Login:</b>
+	<%=h @user.login %>
+</p>
+
+<p>
+	<b>Email:</b>
+	<%=h @user.email %>
+</p>
+
+<p>
+	<b>Password:</b>
+	[secret]
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Back', users_path %>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*برای بازگشت به صفحه ی قبل از گزینه ی "Back" استفاده کنید.
+</p>
+<p>
+*برای ویرایش مشخصات کاربر از گزینه ی "Edit" استفاده کنید.
+</p>
+</div>

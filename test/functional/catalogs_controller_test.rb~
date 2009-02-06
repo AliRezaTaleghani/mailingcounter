@@ -1,0 +1,45 @@
+require 'test_helper'
+
+class TiketsControllerTest < ActionController::TestCase
+  def test_should_get_index
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:tikets)
+  end
+
+  def test_should_get_new
+    get :new
+    assert_response :success
+  end
+
+  def test_should_create_tiket
+    assert_difference('Tiket.count') do
+      post :create, :tiket => { }
+    end
+
+    assert_redirected_to tiket_path(assigns(:tiket))
+  end
+
+  def test_should_show_tiket
+    get :show, :id => tikets(:one).id
+    assert_response :success
+  end
+
+  def test_should_get_edit
+    get :edit, :id => tikets(:one).id
+    assert_response :success
+  end
+
+  def test_should_update_tiket
+    put :update, :id => tikets(:one).id, :tiket => { }
+    assert_redirected_to tiket_path(assigns(:tiket))
+  end
+
+  def test_should_destroy_tiket
+    assert_difference('Tiket.count', -1) do
+      delete :destroy, :id => tikets(:one).id
+    end
+
+    assert_redirected_to tikets_path
+  end
+end

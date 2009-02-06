@@ -1,0 +1,37 @@
+<h1>Listing groups</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for group in @groups %>
+  <tr>
+    <td><%=h group.name %></td>
+    <td><%= link_to 'Show', group %></td>
+    <td><%= link_to 'Edit', edit_group_path(group) %></td>
+    <td><%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New group', new_group_path %>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*برای مشاهده مشخصات زیرگروه موجود از گزینه ی "Show" استفاده کنید.
+</p>
+<p>
+*برای اذافه نمودن یک زیرگروه جدید از گزینه ی "NewDepartment" استفاده کنید.
+</p>
+<p>
+*برای ویرایش مشخصات یک زیرگروه موجود از گزینه ی "Edit" استفاده کنید.
+</p>
+<p>
+*برای حذف نمودن یک زیرگروه از گزینه ی "Destroy" استفاده کنید.
+</p>
+</div>

@@ -1,0 +1,36 @@
+<h1>Editing Catalog</h1>
+
+<% form_for(@catalog) do |f| %>
+  <%= f.error_messages %>
+
+<p>
+    <%= f.label :department_id %><br />
+    <%= f.text_field :department_id %>
+  </p>
+  <p>
+    <%= f.label :group_id %><br />
+    <%= f.text_field :group_id %>
+  </p>
+
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @catalog %> |
+<%= link_to 'Back', catalogs_path %>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*توسط منوهای موجود می توانید وابستگی های ثبت شده را ویرایش کنید.
+</p>
+<p>
+*برای بازگشت به صفحه ی قبل از گزینه ی "Back" استفاده کنید.
+</p>
+<p>
+*برای مشاهده جزئیات ارتباط های موجود از گزینه ی "Show" استفاده کنید.
+</p>
+</div>

@@ -1,0 +1,21 @@
+<h1> Listing Users</h1>
+
+<table>
+<tr>
+<th>login</th>
+<th>email</th>
+</tr>
+
+<% for user in @users %>
+<tr>
+<td><%=h user.login %></td>
+<td><%=h user.email %></td>
+<td><%= link_to 'Show', user %></td>
+<td><%= link_to 'Edit', edit_user_path(user) %></td>
+<td><%= link_to 'Delete', user, :confirm => "AreYouSureToDelete'#{user.login}'?", :method => :delete %></td>
+</tr>
+<% end %>
+</table>
+
+<td><%= link_to 'NewUser', 'users/new' %></td>
+</hr>

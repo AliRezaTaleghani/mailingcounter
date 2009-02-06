@@ -1,0 +1,26 @@
+<h1>Editing post</h1>
+
+<% form_for(@post) do |f| %>
+  <%= f.error_messages %>
+<!--
+  <p>
+    <%= f.label :catalog_id %><br />
+    <%= f.text_field :catalog_id %>  
+  </p>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+-->
+  <p>
+    <%= f.label :append %><br />
+    <%= f.check_box :append %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<!-- <%= link_to 'Show', @post %> | -->
+<%= link_to 'Back', posts_path %>

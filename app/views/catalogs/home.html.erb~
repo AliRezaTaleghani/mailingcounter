@@ -1,0 +1,13 @@
+<div id="depmenu">
+
+</div>
+
+
+
+<div id="ajax menu">
+
+<% for tiket in @tikets %>
+	<p><%= tiket.group.name if tiket.department.name == "Acc"  %></p>
+<% end %>
+   
+</div>

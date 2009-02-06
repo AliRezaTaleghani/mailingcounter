@@ -1,0 +1,22 @@
+<%= error_messages_for :user %>
+<% form_for @user do | f | -%>
+
+<p><lable for="login">login</lable><br/>
+<%= f.text_field :login %></p>
+
+<p><lable for="email">Email</lable><br/>
+<%= f.text_field :email %></p>
+
+<p><lable for="password">Password</lable><br/>
+<%= f.password_field :password %></p>
+
+<p><lable for="password_confirmation">Confirmation Password</lable><br/>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= f.submit "Update" %></p>
+    
+<% end -%>
+
+
+<td><%= link_to 'Show', @user %></td>
+<%= link_to 'Back', users_path %>

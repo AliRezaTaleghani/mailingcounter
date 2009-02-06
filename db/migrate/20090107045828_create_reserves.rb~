@@ -1,0 +1,14 @@
+class CreateReserves < ActiveRecord::Migration
+  def self.up
+    create_table :reserves do |t|
+      t.column :department_id, :int
+      t.column :group_id, :int
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :reserves
+  end
+end

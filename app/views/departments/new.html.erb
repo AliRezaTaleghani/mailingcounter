@@ -1,0 +1,27 @@
+<h1>New department</h1>
+
+<% form_for(@department) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', departments_path %>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*برای افزودن دپارتمان جدید می توانید از فرم بالا استفاده کنید.<br>
+از دکمه ی "Create" می توانید برای ثبت ارتباط استفاده نمایید.
+</p>
+<p>
+*برای بازگشت می توانید از گزینه ی "Back" استفاده کنید
+</p>
+</div>

@@ -1,0 +1,2 @@
+module TiketsHelper
+end

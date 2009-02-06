@@ -1,0 +1,86 @@
+class TiketsController < ApplicationController
+  # GET /tikets
+  # GET /tikets.xml
+
+  def index
+    @tikets = Tiket.find(:all)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @tikets }
+    end
+  end
+
+  # GET /tikets/1
+  # GET /tikets/1.xml
+  def show
+    @tiket = Tiket.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @tiket }
+    end
+  end
+
+  # GET /tikets/new
+  # GET /tikets/new.xml
+  def new
+    @tiket = Tiket.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @tiket }
+    end
+  end
+
+  # GET /tikets/1/edit
+  def edit
+    @tiket = Tiket.find(params[:id])
+  end
+
+  # POST /tikets
+  # POST /tikets.xml
+  def create
+    @tiket = Tiket.new(params[:tiket])
+
+    respond_to do |format|
+      if @tiket.save
+        flash[:notice] = 'Tiket was successfully created.'
+        format.html { redirect_to(@tiket) }
+        format.xml  { render :xml => @tiket, :status => :created, :location => @tiket }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @tiket.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /tikets/1
+  # PUT /tikets/1.xml
+  def update
+    @tiket = Tiket.find(params[:id])
+
+    respond_to do |format|
+      if @tiket.update_attributes(params[:tiket])
+        flash[:notice] = 'Tiket was successfully updated.'
+        format.html { redirect_to(@tiket) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @tiket.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /tikets/1
+  # DELETE /tikets/1.xml
+  def destroy
+    @tiket = Tiket.find(params[:id])
+    @tiket.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(tikets_url) }
+      format.xml  { head :ok }
+    end
+  end
+end

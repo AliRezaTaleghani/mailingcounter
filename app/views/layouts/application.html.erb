@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= @pagetitle || (@page && @page.title) || 'It is Simple WebApp' %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+    <%= javascript_include_tag "prototype" %>
+</head>
+<body>
+<div id='pagewrapper'>
+
+	<div id='header'>
+		<p>
+		
+<a href="http://jigsaw.w3.org/css-validator/">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!" /></a>
+SAMEXXON Mailing Sequence Generator WebApp
+		</p>
+		
+	</div>
+		  
+<div id='navbar'>
+
+	<ul>
+		<% if logged_in? %>
+			<li><%= link_to 'Logout', logout_path %></li>
+			<% if current_user.login == 'root' %>
+			<li><%= link_to 'Users', url_for(:action => 'index', :controller => 'users') %></li>
+			<li><%= link_to 'Departments', url_for(:action => 'index', :controller => 'departments') %></li>
+			<li><%= link_to 'Groups', url_for(:action => 'index', :controller => 'groups') %></li>
+			<li><%= link_to 'Catalogs', url_for(:action => 'index', :controller => 'catalogs') %></li>			
+			<% end %>
+			<li><%= link_to 'Posts', url_for(:action => 'index', :controller => 'posts') %></li>
+		<% else %>
+			<li><%= link_to 'Login', login_path %></li>
+		<% end %>		
+		
+	</ul>
+</div> 
+
+<div id='content' align="left">
+<h2> <%= flash[:notice] %>	</h2>
+	<%= yield  %>
+</div>
+
+
+	<div id='footer'>
+	<% if logged_in? %>
+		Wellcome: <%= current_user.login %>
+	<% end %>	
+		<p>PoweredByAliRezaTaleghani</p>
+	</div>
+</div>
+</body>
+</html>

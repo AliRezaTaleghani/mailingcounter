@@ -1,0 +1,30 @@
+<h1>Editing department</h1>
+
+<% form_for(@department) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @department %> |
+<%= link_to 'Back', departments_path %>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*توسط فرم موجود می توانید مشخصات دیپارتمان ثبت شده را ویرایش کنید.
+</p>
+<p>
+*برای بازگشت به صفحه ی قبل از گزینه ی "Back" استفاده کنید.
+</p>
+<p>
+*برای مشاهده جزئیات ارتباط های موجود از گزینه ی "Show" استفاده کنید.
+</p>
+</div>

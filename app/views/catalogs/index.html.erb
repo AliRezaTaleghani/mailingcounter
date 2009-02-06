@@ -1,0 +1,46 @@
+<h1>Listing Catalogs</h1>
+<table>
+  <tr>
+ 
+ 	 <th>CalaogID</th>
+	    
+    <th>Department</th>
+    
+    <th>Group</th>
+ 
+  </tr>
+
+<% for catalog in @catalogs %>
+  <tr>
+  
+    <td><%=h catalog.id %></td>     
+    <td><%=h catalog.department.name if catalog.department %></td>    
+    <td><%=h catalog.group.name if catalog.group %></td>
+  
+    <td><%= link_to 'Show', catalog %></td>
+    <td><%= link_to 'Edit', edit_catalog_path(catalog) %></td>
+    <td><%= link_to 'Destroy', catalog, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New catalog', new_catalog_path %>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*برای مشاهده جزئیات ارتباط های موجود از گزینه ی "Show" استفاده کنید.
+</p>
+<p>
+*برای اذافه نمودن زیرگروه به دیپارتمان جدید از گزینه ی "NewCatalog" استفاده کنید.
+</p>
+<p>
+*برای ویرایش ارتباط بین دیپارتمان و زیرگروه های موجود از گزینه ی "Edit" استفاده کنید.
+</p>
+<p>
+*برای حذف نمودن ارتباط بین دیپارتمان و زیرگروه موجود از گزینه ی "Destroy" استفاده کنید.
+</p>
+</div>

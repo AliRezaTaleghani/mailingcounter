@@ -1,0 +1,14 @@
+class CreateMails < ActiveRecord::Migration
+  def self.up
+    create_table :mails do |t|
+      t.int :catalog_id
+      t.int :user_id
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :mails
+  end
+end

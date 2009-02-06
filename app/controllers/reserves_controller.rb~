@@ -1,0 +1,91 @@
+class ReservesController < ApplicationController
+  # GET /reserves
+  # GET /reserves.xml
+  def index
+    @reserves = Reserve.find(:all)
+    @reserves = Reserve.find(:all, :include => :department)
+    @groups = Reserve.find(:all, :include => :group)
+
+    
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @reserves }
+    end
+  end
+
+  # GET /reserves/1
+  # GET /reserves/1.xml
+  def show
+    @reserve = Reserve.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @reserve }
+    end
+  end
+
+  # GET /reserves/new
+  # GET /reserves/new.xml
+  def new
+    @departments = Department.find_by_name(:all)
+    @groups = Group.find_by_name(:all)
+    @reserve = Reserve.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @reserve }
+    end
+  end
+
+  # GET /reserves/1/edit
+  def edit
+    @reserve = Reserve.find(params[:id])
+  end
+
+  # POST /reserves
+  # POST /reserves.xml
+  def create
+    @reserve = Reserve.new(params[:reserve])
+
+    respond_to do |format|
+      if @reserve.save
+        flash[:notice] = 'Reserve was successfully created.'
+        format.html { redirect_to(@reserve) }
+        format.xml  { render :xml => @reserve, :status => :created, :location => @reserve }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @reserve.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /reserves/1
+  # PUT /reserves/1.xml
+  def update
+    @reserve = Reserve.find(params[:id])
+
+    respond_to do |format|
+      if @reserve.update_attributes(params[:reserve])
+        flash[:notice] = 'Reserve was successfully updated.'
+        format.html { redirect_to(@reserve) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @reserve.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /reserves/1
+  # DELETE /reserves/1.xml
+  def destroy
+    @reserve = Reserve.find(params[:id])
+    @reserve.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(reserves_url) }
+      format.xml  { head :ok }
+    end
+  end
+end

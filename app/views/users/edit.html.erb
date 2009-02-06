@@ -1,0 +1,36 @@
+<%= error_messages_for :user %>
+<% form_for @user do | f | -%>
+
+<p><lable for="login">login</lable><br/>
+<%= f.text_field :login %></p>
+
+<p><lable for="email">Email</lable><br/>
+<%= f.text_field :email %></p>
+
+<p><lable for="password">Password</lable><br/>
+<%= f.password_field :password %></p>
+
+<p><lable for="password_confirmation">Confirmation Password</lable><br/>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= f.submit "Update" %></p>
+    
+<% end -%>
+
+
+<td><%= link_to 'Show', @user %></td>
+<%= link_to 'Back', users_path %>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*توسط فرم موجود می توانید مشخصات کاربر ثبت شده را ویرایش کنید.
+</p>
+<p>
+*برای بازگشت به صفحه ی قبل از گزینه ی "Back" استفاده کنید.
+</p>
+<p>
+*برای مشاهده جزئیات کاربر از گزینه ی "Show" استفاده کنید.
+</p>
+</div>

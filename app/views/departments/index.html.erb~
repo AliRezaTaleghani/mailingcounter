@@ -1,0 +1,36 @@
+<h1>Listing departments</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for department in @departments %>
+  <tr>
+    <td><%=h department.name %></td>
+    <td><%= link_to 'Show', department %></td>
+    <td><%= link_to 'Edit', edit_department_path(department) %></td>
+    <td><%= link_to 'Destroy', department, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New department', new_department_path %>
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*برای مشاهده مشخصات دیپارتمان موجود از گزینه ی "Show" استفاده کنید.
+</p>
+<p>
+*برای اذافه نمودن یک دیپارتمان جدید از گزینه ی "NewDepartment" استفاده کنید.
+</p>
+<p>
+*برای ویرایش مشخصات یک دیپارتمان موجود از گزینه ی "Edit" استفاده کنید.
+</p>
+<p>
+*برای حذف نمودن یک دیپارتان از گزینه ی "Destroy" استفاده کنید.
+</p>
+</div>

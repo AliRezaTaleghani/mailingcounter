@@ -1,0 +1,15 @@
+class CreateMails < ActiveRecord::Migration
+  def self.up
+    create_table :mails do |t|
+      t.integer :catalog_id
+      t.integer :user_id
+      t.boolean :append
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :mails
+  end
+end

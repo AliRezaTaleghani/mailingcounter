@@ -1,0 +1,38 @@
+<h1> Listing Users</h1>
+
+<table>
+<tr>
+<th>login</th>
+<th>email</th>
+</tr>
+
+<% for user in @users %>
+<tr>
+<td><%=h user.login %></td>
+<td><%=h user.email %></td>
+<td><%= link_to 'Show', user %></td>
+<td><%= link_to 'Edit', edit_user_path(user) %></td>
+<td><%= link_to 'Delete', user, :confirm => "AreYouSureToDelete'#{user.login}'?", :method => :delete %></td>
+</tr>
+<% end %>
+</table>
+
+<td><%= link_to 'NewUser', 'users/new' %></td>
+</hr>
+
+
+<div id="comment" dir="RTL" align="Right">
+<hr>
+<p>
+*برای مشاهده مشخصات کاربر موجود از گزینه ی "Show" استفاده کنید.
+</p>
+<p>
+*برای اذافه نمودن یک کاربر جدید از گزینه ی "NewUser" استفاده کنید.
+</p>
+<p>
+*برای ویرایش مشخصات یک کاربر از گزینه ی "Edit" استفاده کنید.
+</p>
+<p>
+*برای حذف نمودن یک کاربر از گزینه ی "Destroy" استفاده کنید.
+</p>
+</div>

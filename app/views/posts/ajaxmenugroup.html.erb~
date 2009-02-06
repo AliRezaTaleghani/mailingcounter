@@ -1,0 +1,9 @@
+
+<% form_for (@post) do |p| %>
+	<%= p.error_messages %>
+
+	 <%= p.label :catalog_id %><br />
+    <%= p.select(:catalog_id, @validgroups.collect {|d| [d.group.name, d.id] } )%>
+    <%= hidden_field :post, :user_id, :value=> current_user.id %>
+   	 <%= p.submit "Create" %>
+<% end %>
