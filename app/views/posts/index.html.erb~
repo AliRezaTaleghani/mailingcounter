@@ -20,7 +20,9 @@
     <td><%=h post.append %></td>
     
 <!--    <td><%= link_to 'Show', post %></td> -->
-        <td><%= if current_user.login == 'root'  link_to 'Edit', edit_post_path(post) %></td> 
+        <td><%= if current_user.login == 'root'  
+        link_to 'Edit', edit_post_path(post) 
+        end %></td> 
 <!--    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td> -->
 
   </tr>
@@ -29,10 +31,18 @@
 
 <br />
 
-<%=
-if current_user.login != 'root' 
- link_to 'New post', new_post_path
- end
- 
-
+<% if current_user.login != 'root' %> 
+<%= link_to 'New post', new_post_path %>
+<div id="comment" dir="RTL" align="Right"> <p>
+*مدیریت محترم<br>
+برای تایید نامه های دریافت شده از گزینه ی "Edit" استفاده کنید.
+	</p>
+<% end
+else
 %>
+<div id="comment" dir="RTL" align="Right"> <p>
+*کاربر محترم<br>
+برای دریافت شماره ی نامه از گزینه ی "NewPost" استفاده کنید.
+</p>
+
+
