@@ -5,11 +5,11 @@
 
 <p>
     <%= f.label :department_id %><br />
-    <%= f.text_field :department_id %>
+    <%= f.select(:department_id, Department.find(:all).collect {|p| [ p.name, p.id ] } ) %>
   </p>
   <p>
     <%= f.label :group_id %><br />
-    <%= f.text_field :group_id %>
+    <%= f.select(:group_id, Group.find(:all).collect {|p| [ p.name, p.id ] }) %>
   </p>
 
 
