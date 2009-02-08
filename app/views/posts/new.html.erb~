@@ -3,7 +3,7 @@
   <% @ajaxmenudepartments.each do |f| %>
     <%= link_to_remote(f.first, :update => 'ajaxmenugroup',  :url => { :action => "ajaxmenugroup", :department_id => f.last }) %>
     
-    <%=# f.select(:department_id, Department.find(:all).collect {|p| [ p.name, p.id ] } ) %>                        
+<!--    <%= f.select(:department_id, Department.find(:all).collect {|p| [ p.name, p.id ] } ) %>  -->                        
    <% end %>
 </div>
  

@@ -34,15 +34,13 @@
 <% if current_user.login != 'root' %> 
 <%= link_to 'New post', new_post_path %>
 <div id="comment" dir="RTL" align="Right"> <p>
-*مدیریت محترم<br>
-برای تایید نامه های دریافت شده از گزینه ی "Edit" استفاده کنید.
+*کاربر محترم<br>
+برای دریافت شماره ی نامه از گزینه ی "NewPost" استفاده کنید.
 	</p>
 <% end
 else
 %>
 <div id="comment" dir="RTL" align="Right"> <p>
-*کاربر محترم<br>
-برای دریافت شماره ی نامه از گزینه ی "NewPost" استفاده کنید.
+*مدیریت محترم<br>
+برای تایید نامه های دریافت شده از گزینه ی "Edit" استفاده کنید.
 </p>
-
-
